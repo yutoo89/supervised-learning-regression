@@ -14,18 +14,21 @@ ENV TERM xterm
 RUN apt-get install -y fonts-noto-cjk
 
 RUN apt-get install -y vim less
+RUN apt install -y graphviz
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
 RUN python -m pip install \
     pandas \
     matplotlib \
+    seaborn \
     numpy \
     scipy \
     ipython \
     scikit-learn \
     mglearn \
     jupyterlab \
+    graphviz \
     notebook
 
 RUN echo "alias p='python'" >> /root/.bashrc
