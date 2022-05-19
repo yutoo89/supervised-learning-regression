@@ -29,6 +29,7 @@ RUN python -m pip install \
     mglearn \
     jupyterlab \
     graphviz \
+    tabulate \
     notebook
 
 RUN echo "alias p='python'" >> /root/.bashrc
