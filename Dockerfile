@@ -30,6 +30,14 @@ RUN python -m pip install \
     jupyterlab \
     graphviz \
     tabulate \
-    notebook
+    notebook \
+    jupyter-contrib-nbextensions \
+    jupyter-nbextensions-configurator
+
+RUN jupyter contrib nbextension install
+RUN jupyter nbextensions_configurator enable
 
 RUN echo "alias p='python'" >> /root/.bashrc
+
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt install -y --fix-broken ./google-chrome-stable_current_amd64.deb
